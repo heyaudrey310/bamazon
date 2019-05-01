@@ -24,11 +24,7 @@ var display = function() {
         head: ["Product ID", "Product Description", "Price"],
         colWidths: [12, 50, 8],
         colAligns: ["center", "left", "right"],
-        style: {
-          head: ["aqua"],
-          compact: true
-          // 'padding-right' : 1,
-        }
+        
       });
   
       for (var i = 0; i < res.length; i++) {
