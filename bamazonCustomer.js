@@ -21,7 +21,7 @@ var display = function() {
     connection.query("SELECT * FROM products", function(err, res) {
       if (err) throw err;
       var table = new Table({
-        head: ["Product Id", "Product Description", "Cost"],
+        head: ["Product ID", "Product Description", "Price"],
         colWidths: [12, 50, 8],
         colAligns: ["center", "left", "right"],
         style: {
@@ -39,7 +39,8 @@ var display = function() {
       console.log("");
       productItems();
     }); //End Connection to products
-};
+}
+display();
 
 function productItems() {
 	connection.connect(function(err) {
