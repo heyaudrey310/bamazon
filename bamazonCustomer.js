@@ -28,12 +28,14 @@ var display = function() {
       });
   
       for (var i = 0; i < res.length; i++) {
-        table.push([res[i].id, res[i].products_name, res[i].price]);
+        //   console.log(res[i]);
+        //   console.log(res[i].products_name)
+        table.push([res[i].item_id, res[i].product_name, res[i].price]);
       }
-  
+ // console.log(table)
       console.log(table.toString());
-      console.log("");
-      productItems();
+     // console.log("");
+    productItems();
     }); //End Connection to products
 }
 display();
@@ -43,12 +45,12 @@ function productItems() {
 
 		connection.query("SELECT * FROM products", function(err, res) {
 		if (err) throw err;
-		else console.table(res , "\n");
+		
 		productId();
 		});
 	});
 }
-productItems();
+
 
 
 function productId() {
@@ -58,9 +60,9 @@ function productId() {
 		{
 		 type: "input",
 		 name: "id",
-		 message: "What is the ID of the product you would like to buy?.\n",
+		 message: "What is the ID of the product you would like to buy?.",
 		 validate: function(value) {
-		 	if (!isNaN(value) && value < 10) {
+		 	if (!isNaN(value) && value < 20000) {
 		 		return true;
 		 	}
 		 	return false;
@@ -95,12 +97,12 @@ function productId() {
 				var currQuantity = res[0].stock_quantity;
 				console.log("Current quantity in stock: " , currQuantity);
 				var price = res[0].price;
-				var remQuantity = currQuantity - answer.quant;
+				var remQuantity = currQuantity - userQuantity;
 				console.log("Remaining quantity in stock: " , remQuantity);
 
-				if(currQuantity > answer.quant) {
+				if(currQuantity > answer.quantity) {
 
-					console.log("Amount Remaining: " + remQuantity);
+					console.log("Qty Remaining: " + remQuantity);
 					console.log("Total Cost: " + (answer.quantity * price) + "\n");
 
 					connection.query("UPDATE products SET stock_quantity=? WHERE item_id=?",
