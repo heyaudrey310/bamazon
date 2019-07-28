@@ -1,0 +1,57 @@
+body{
+    color: white;
+    background-image: url("../images/ws-bg.jpg");
+    height: 100%;
+    width:100%;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    font-family: 'Oswald', sans-serif;
+}
+#container  {
+    border: solid;
+    border-block-end-color:white;
+}
+.wrapper {
+    text-align: center;
+}
+h1, h2  {
+    font-family: 'Dancing Script', cursive;
+    text-align: center;
+    font-size: 300%;
+}
+p   {
+    text-align: center;
+    font-size: 150%;
+
+}
+#quiz   {
+    text-align: center;
+}
+#start  {
+    text-align: center;
+    color: black;
+    font-size: 20px;
+    width: 10em;  height: 3em;
+}
+#results    {
+    text-align: center;
+    font-size: 150%;
+}
+#timer  {
+    float: left;
+    
+   
+}
+#startGame, #next  {
+    color: white;
+    background-color: darkmagenta;
+    size: 200px;
+
+}
+img  {
+    width: 350px;
+    height: 300px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
